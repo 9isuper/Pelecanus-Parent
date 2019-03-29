@@ -24,4 +24,21 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
+	<distributionManagement>
+		<!-- use the following if you're not using a snapshot version. -->
+		<repository>
+			<id>rdc-releases</id>
+			<name>rdc-releases</name>
+			<url>https://repo.rdc.aliyun.com/repository/43743-release-CiJ338/</url>
+		</repository>
+		<!-- use the following if you ARE using a snapshot version. -->
+		<snapshotRepository>
+			<id>rdc-snapshots</id>
+			<name>rdc-snapshots</name>
+			<url>https://repo.rdc.aliyun.com/repository/43743-snapshot-d0AxiV/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
 </project>
