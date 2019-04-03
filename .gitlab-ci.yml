@@ -1,9 +1,0 @@
-image: java:8
-
-stages:
-  - build
-  - deploy
-
-build:
-  stage: build
-  script: ./mvnw package
