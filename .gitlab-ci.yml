@@ -2,6 +2,6 @@ before_script:
     - export MAVEN_HOME=/usr/local/apache-maven
 build:
     script:
-    - 'pwd && mvn test'
+    - 'pwd && $MAVEN_HOME/bin/mvn test'
     tags:  
     - common-runner
