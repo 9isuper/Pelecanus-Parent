@@ -1,13 +1,5 @@
 image: maven:latest
 
-variables:
-  MAVEN_CLI_OPTS: "-s /opt/settings.xml --batch-mode"
-
-cache:
-  paths:
-    - .m2/repository/
-    - target/
-
 build:
   stage: build
   tags:
