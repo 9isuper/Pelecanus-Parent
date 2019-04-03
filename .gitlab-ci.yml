@@ -8,20 +8,25 @@ cache:
   paths:
     - .m2/repository/
     - target/
-  tags: docker-runner
 
 build:
   stage: build
+  tags:
+    - docker-runner
   script:
     - mvn $MAVEN_CLI_OPTS compile
 
 test:
   stage: test
+  tags:
+    - docker-runner
   script:
     - mvn $MAVEN_CLI_OPTS test
 
 deploy:
   stage: deploy
+  tags:
+    - docker-runner
   script:
     - mvn $MAVEN_CLI_OPTS deploy
   only:
