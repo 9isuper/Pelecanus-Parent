@@ -1,3 +1,5 @@
+before_script:    
+    - export MAVEN_HOME=/usr/local/apache-maven
 build:
     script:
     - 'pwd && mvn test'
