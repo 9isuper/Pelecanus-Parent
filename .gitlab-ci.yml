@@ -2,4 +2,4 @@ build:
     script:
     - 'pwd && mvn test'
     tags:  
-    - java
+    - common-runner
