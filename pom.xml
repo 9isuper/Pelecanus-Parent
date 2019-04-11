@@ -19,6 +19,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<pelecanus.dependencies.version>1.0.0.2-SNAPSHOT</pelecanus.dependencies.version>
+		<pelecanus.common.version>1.0.0.3-SNAPSHOT</pelecanus.common.version>
 	</properties>
 
 
