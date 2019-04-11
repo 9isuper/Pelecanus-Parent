@@ -16,6 +16,12 @@
 	<name>Pelecanus Parent</name>
 	<description>Pelecanus Parent</description>
 
+	<properties>
+		<java.version>1.8</java.version>
+		<pelecanus.dependencies.version>1.0.0.2-SNAPSHOT</pelecanus.dependencies.version>
+	</properties>
+
+
 	<build>
 		<plugins>
 			<plugin>
