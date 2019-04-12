@@ -9,7 +9,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>com.isuper.pelecanus</groupId>
+	<groupId>com.9isuper.pelecanus</groupId>
 	<artifactId>pelecanus-parent</artifactId>
 	<version>1.0.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
