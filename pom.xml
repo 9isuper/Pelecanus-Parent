@@ -11,17 +11,30 @@
 
 	<groupId>com.9isuper.pelecanus</groupId>
 	<artifactId>pelecanus-parent</artifactId>
-	<version>1.0.0.2-SNAPSHOT</version>
+	<version>${pelecanus.parent.version}</version>
 	<packaging>pom</packaging>
 	<name>Pelecanus Parent</name>
 	<description>Pelecanus Parent</description>
 
 	<properties>
+		<pelecanus.parent.version>1.0.0.2-SNAPSHOT</pelecanus.parent.version>
+
 		<java.version>1.8</java.version>
+
+
 		<pelecanus.dependencies.version>1.0.0.2-SNAPSHOT</pelecanus.dependencies.version>
 		<pelecanus.common.version>1.0.0.3-SNAPSHOT</pelecanus.common.version>
 	</properties>
 
+
+	<profiles>
+		<profile>
+			<id>product</id>
+			<properties>
+				<pelecanus.parent.version>0.0.0.1</pelecanus.parent.version>
+			</properties>
+		</profile>
+	</profiles>
 
 	<build>
 		<plugins>
@@ -120,11 +133,23 @@
 		<id>rdc-snapshots</id> <name>rdc-snapshots</name> <url>https://repo.rdc.aliyun.com/repository/43743-snapshot-d0AxiV/</url> 
 		</snapshotRepository> </distributionManagement> -->
 
+	<!-- <distributionManagement> <snapshotRepository> <id>sonatype-nexus-snapshots</id> 
+		<name>Sonatype Nexus Snapshots</name> <url>https://oss.sonatype.org/content/repositories/snapshots/</url> 
+		</snapshotRepository> <repository> <id>sonatype-nexus-staging</id> <name>Nexus 
+		Release Repository</name> <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url> 
+		</repository> </distributionManagement> -->
+
+	<!-- <distributionManagement> <snapshotRepository> <id>9isuper-snapshots</id> 
+		<name>9isuper Nexus Snapshots</name> <url>https://maven.9isuper.com/repository/9isuper-snapshots/</url> 
+		</snapshotRepository> <repository> <id>9isuper-releases</id> <name>9isuper 
+		Release Repository</name> <url>https://maven.9isuper.com/repository/9isuper-releases/</url> 
+		</repository> </distributionManagement> -->
+
 	<distributionManagement>
 		<snapshotRepository>
-			<id>sonatype-nexus-snapshots</id>
-			<name>Sonatype Nexus Snapshots</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<id>9isuper-snapshots</id>
+			<name>9isuper Nexus Snapshots</name>
+			<url>https://maven.9isuper.com/repository/9isuper-snapshots/</url>
 		</snapshotRepository>
 		<repository>
 			<id>sonatype-nexus-staging</id>
