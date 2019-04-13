@@ -1,0 +1,1 @@
+ D:\workspace\maven\bin\mvn clean deploy -P product -Darguments="gpg.passphrase=Jimmy3389"
