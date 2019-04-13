@@ -16,11 +16,34 @@
 	<name>Pelecanus Parent</name>
 	<description>Pelecanus Parent</description>
 
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<url>https://gitlab.9isuper.com/pelecanus-parent/pelecanus-parent</url>
+
+	<scm>
+		<url>https://gitlab.9isuper.com/pelecanus-parent/pelecanus-parent.git</url>
+		<connection>https://gitlab.9isuper.com/pelecanus-parent/pelecanus-parent.git</connection>
+		<developerConnection>http://www.9isuper.com</developerConnection>
+	</scm>
+
+	<developers>
+		<developer>
+			<name>YongLe.Zou</name>
+			<email>YongLe.Zou@9isuper.com</email>
+			<url>https://gitlab.9isuper.com/YongLe.Zou</url>
+		</developer>
+	</developers>
+
 	<properties>
 		<pelecanus.parent.version>1.0.0.2-SNAPSHOT</pelecanus.parent.version>
 
 		<java.version>1.8</java.version>
-
 
 		<pelecanus.dependencies.version>1.0.0.2-SNAPSHOT</pelecanus.dependencies.version>
 		<pelecanus.common.version>1.0.0.3-SNAPSHOT</pelecanus.common.version>
@@ -41,6 +64,55 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.3</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>sonatype-nexus-staging</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -100,7 +172,7 @@
 			</snapshots>
 		</repository>
 	</repositories>
-	
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-snapshots</id>
