@@ -12,9 +12,6 @@ cache:
   paths:
     - /root/.m2/repository
 
-stages:
-  - deploy
-
 build:
   stage: build
   tags:
