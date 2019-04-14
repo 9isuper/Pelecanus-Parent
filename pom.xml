@@ -54,7 +54,7 @@
 		<profile>
 			<id>product</id>
 			<properties>
-				<pelecanus.parent.version>0.0.0.1</pelecanus.parent.version>
+				<pelecanus.parent.version>0.0.0.2</pelecanus.parent.version>
 			</properties>
 			<build>
 				<plugins>
