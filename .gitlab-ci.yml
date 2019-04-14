@@ -31,6 +31,7 @@ deploy:
   tags:
     - docker-runner
   script:
+    - echo -e "use-agent\npinentry-mode loopback  " > /root/.gnupg/gpg-agent.conf
     - gpg --import /root/.m2/D8317D8BCF26AC2DD96805A9CDD6F7B3285B8E7B.asc
     - mvn $MAVEN_CLI_OPTS deploy  -Dgpg.passphrase Jimmy3389
   only:
