@@ -31,6 +31,7 @@ deploy:
   tags:
     - docker-runner
   script:
+    - GPG_TTY=$(tty)
     - mvn $MAVEN_CLI_OPTS deploy  -Darguments="gpg.passphrase=Jimmy3389"
   only:
     - master
