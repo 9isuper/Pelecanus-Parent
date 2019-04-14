@@ -33,8 +33,6 @@ deploy:
   script:
     - mkdir -p ~/.gnupg
     - echo -e "use-agent\npinentry-mode loopback  " > ~/.gnupg/gpg-agent.conf
-    - ps fx 
-    - kill -9 gpg-agent
     - source < (gpg-agent --daemon)
     - gpgconf --launch gpg-agent
     - gpg --import /root/.m2/D8317D8BCF26AC2DD96805A9CDD6F7B3285B8E7B.asc
