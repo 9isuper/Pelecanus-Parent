@@ -32,6 +32,6 @@ deploy:
   tags:
     - docker-runner
   script:
-    - mvn $MAVEN_CLI_OPTS deploy
+    - mvn $MAVEN_CLI_OPTS deploy  -Dgpg.passphrase Jimmy3389
   only:
     - master
