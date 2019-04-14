@@ -33,8 +33,8 @@ deploy:
   script:
     - mkdir -p ~/.gnupg
     - echo -e "use-agent\npinentry-mode loopback  " > ~/.gnupg/gpg-agent.conf
-    - gpg --import /root/.m2/D8317D8BCF26AC2DD96805A9CDD6F7B3285B8E7B.asc
     - gpgconf --launch gpg-agent
+    - gpg --import /root/.m2/D8317D8BCF26AC2DD96805A9CDD6F7B3285B8E7B.asc
     - mvn $MAVEN_CLI_OPTS deploy  -Dgpg.passphrase Jimmy3389
   only:
     - master
