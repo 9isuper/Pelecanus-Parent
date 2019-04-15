@@ -11,10 +11,42 @@
 
 	<groupId>com.9isuper.pelecanus</groupId>
 	<artifactId>pelecanus-parent</artifactId>
-	<version>${pelecanus.parent.version}</version>
+	<version>1.0.0.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Pelecanus Parent</name>
 	<description>Pelecanus Parent</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+
+		<pelecanus.dependencies.version>1.0.0.3-SNAPSHOT</pelecanus.dependencies.version>
+		<pelecanus.common.version>1.0.0.5-SNAPSHOT</pelecanus.common.version>
+	</properties>
+
+
+	<profiles>
+		<profile>
+			<id>product</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 	<licenses>
 		<license>
@@ -40,49 +72,13 @@
 		</developer>
 	</developers>
 
-	<properties>
-		<pelecanus.parent.version>1.0.0.2-SNAPSHOT</pelecanus.parent.version>
-
-		<java.version>1.8</java.version>
-
-		<pelecanus.dependencies.version>1.0.0.2-SNAPSHOT</pelecanus.dependencies.version>
-		<pelecanus.common.version>1.0.0.3-SNAPSHOT</pelecanus.common.version>
-	</properties>
-
-
-	<profiles>
-		<profile>
-			<id>product</id>
-			<properties>
-				<pelecanus.parent.version>0.0.0.2</pelecanus.parent.version>
-			</properties>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.6</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 
 	<build>
 		<plugins>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+			</plugin> -->
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
@@ -94,30 +90,12 @@
 					<autoReleaseAfterClose>true</autoReleaseAfterClose>
 				</configuration>
 			</plugin>
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin> -->
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<goals>
-							<goal>jar-no-fork</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin> -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-javadoc-plugin</artifactId> 
+				<executions> <execution> <id>attach-javadocs</id> <goals> <goal>jar</goal> 
+				</goals> </execution> </executions> </plugin> -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-source-plugin</artifactId> 
+				<executions> <execution> <id>attach-sources</id> <goals> <goal>jar-no-fork</goal> 
+				</goals> </execution> </executions> </plugin> -->
 		</plugins>
 	</build>
 
