@@ -21,6 +21,8 @@
 
 		<pelecanus.dependencies.version>1.0.0.3-SNAPSHOT</pelecanus.dependencies.version>
 		<pelecanus.common.version>1.0.0.5-SNAPSHOT</pelecanus.common.version>
+
+		<spring-cloud.version>Greenwich.BUILD-SNAPSHOT</spring-cloud.version>
 	</properties>
 
 
