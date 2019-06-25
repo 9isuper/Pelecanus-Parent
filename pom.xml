@@ -67,6 +67,17 @@
 							<encoding>UTF-8</encoding>
 						</configuration>
 					</plugin>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.6.3</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>sonatype-nexus-staging</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+						</configuration>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
@@ -95,25 +106,6 @@
 			<url>https://gitlab.9isuper.com/YongLe.Zou</url>
 		</developer>
 	</developers>
-
-
-	<build>
-		<plugins>
-			<!-- <plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> 
-				</plugin> -->
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.3</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>sonatype-nexus-staging</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 
 	<repositories>
 		<repository>
